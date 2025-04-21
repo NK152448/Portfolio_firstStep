@@ -1,0 +1,345 @@
+@import url("https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbVhFeU1NRnhFejFLMElWT3h3bkZBYWtKclZid3xBQ3Jtc0tuMnNMZElFSTV3MkZWcVR1RDI1VWFST2xONmFZYW10Qm9pTENPUHNuem83Wm9ROXlNdzBaME1YV0dROC1oS2JnY3pFOGZtSGFXRnRxWDNueEJwa1F2UjlzYm53OTM3TWtoNU8wb0xoNkg4eXlzX01oQQ&q=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DPoppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600%26display%3Dswap%27%29%3B&v=-u3vE84Wo_U");
+
+/* reset css */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* chỉnh size chữ cho toàn bộ trang web */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%; /* đảm  bảo body trải dài full chiều ngang trình duyệt */
+  min-height: 100vh; /* đảm bảo hiển thị theo kích thước màn hình */
+  background: rgba(0, 0, 0, 0.851);
+  color: white;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 10px auto;
+  overflow-x: hidden; /* ẩn phần nội dung vượt quá chiều ngang container, ngăn thanh cuộn ngang xuất hiện */
+}
+
+/* ----------------------------------------------------header------------------------------ */
+header {
+  margin-top: 20px;
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: transparent;  /* dùng để loại bỏ màu nền của header, làm cho background đằng sau lộ ra */
+  filter: drop-shadow();
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100; /* z-index càng cao sẽ đè đầu các z-index thấp hơn, đặt 100 đảm bảo header luôn ở phía trước */
+}
+
+.contact {
+  padding: 10px;
+  font-size: 10px;
+  transition: 0.3s ease;
+}
+.contact:hover {
+  box-shadow: 0 0.6em 0.5em -0.4em #a6ff00;
+  transform: translateY(-0.25em);
+  background: #a6ff00;
+}
+
+/* :root {} dùng để linh hoạt sử dụng biến trong đây, sử dụng var() để gọi biến */
+:root {
+  --primary-gradient: linear-gradient(128deg, #a6ff00 0%, #e9630a 50%, #ff3333 100%);
+  --hover-gradient: linear-gradient(128deg, #8bc408 0%, #d15a08 50%, #ff6666 100%);
+  --text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --font-size-large: clamp(6rem, 14vw, 8rem); /* clamp(min, preferred, max) dùng để linh hoạt kích thước khi user sử dụng trang web qua máy tính, điện thoại hoặc ipad */
+}
+
+/* @media (điều kiện) {kiểu dáng} */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-gradient: linear-gradient(128deg, #b9f70e 0%, #ec7f2c 50%, #ff8080 100%);
+    --hover-gradient: linear-gradient(128deg, #b3f10e 0%, #ff9933 50%, #ff9999 100%);
+  }
+}
+
+.logo {
+  user-select: none; /* để khi double click không bị tô xanh */
+  font-size: var(--font-size-large);
+  font-weight: 900;
+  cursor:default;
+  background: var(--primary-gradient);
+  color: transparent; /* khiến văn bản trong suốt, cho phép màu gradient hiện lên qua các chữ cái. */
+  background-clip: text; /* làm cho màu gradient chỉ áp dụng cho phần văn bản của logo, không phải toàn bộ nền. */
+  text-shadow: var(--text-shadow);
+  transition: transform 0.3s ease, text-shadow 1s ease;
+  transform-origin: left;
+  animation: fadeInLogo 1s ease-out;
+}
+.logo:hover {
+  transform: perspective(1000px) rotateY(10deg) scale(1.05);
+  text-shadow: 0 4px 8px rgba(95, 210, 19, 0.5);
+}
+
+/* định hình animation, cụ thể là animation fadeInLogo */
+@keyframes fadeInLogo {
+
+  /* khi vừa vào trang, logo sẽ hiện mờ nhất và xuất hiện ở tọa độ thấp hơn 20px */
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+nav ul {
+  font-size: 15px;
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+ul a {
+  text-decoration: none;
+  color: white;
+}
+
+.button {
+  background-color: white;
+  border: none;
+  padding: 12px 25px; /* khoảng cách từ chữ đến viền nút, cụ thể từ chữ đến viền trên và dưới nút cách 12px, và 2 bên mỗi bên cách 25px */
+  border-radius: 1000px; /* độ bo góc */
+  font-size: 20px;
+  cursor: pointer;
+  color: black;
+  overflow: hidden;
+}
+
+
+
+.button span {
+  font-weight: 600; /* độ đậm nhạt của chữ */
+}
+
+/* -----------------------------------------------------main------------------------------------------------- */
+
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.Khiet {
+  margin-right: 35px;
+  border-radius: 50px;
+  background-color: #64e90511;
+  box-shadow: 
+    -10px -10px 30px rgb(75, 83, 63),
+     10px  10px 30px rgba(174, 174, 192, 0.4);
+
+  width: 655px;
+  height: 800px;
+  user-select: none;
+}
+
+.introduction {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5px;
+}
+.home_content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 600px;
+}
+
+.home_content h1 {
+  font-size: 6rem;
+}
+
+.home_content h1 span {
+  color:#a6ff00;
+}
+
+.content2 {
+  color: #e3f44b;
+  font-size: 2rem;
+  font-weight: 100;
+  font-style: oblique;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.description p {
+  line-height: 20px;
+  font-weight: 5;
+  font-size: 15px;
+  max-width: 600px; /* giới hạn khung chữ */
+  overflow-x: hidden;
+  text-overflow: ellipsis; /* Nếu nội dung bị cắt sẽ tự thêm dấu ... */
+}
+
+.button_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.readMore {
+  display: flex;
+  position: relative;
+  border: 2px solid #a6ff00;
+  background-color: transparent;
+  color:#a6ff00;
+  z-index: 1;
+  gap: 5px;
+}
+
+
+.start:hover {
+  background: #039c00;
+  background: linear-gradient(90deg, rgba(3, 156, 0, 1) 0%, rgba(170, 255, 0, 1) 100%);
+  border: none;
+  transform: translateY(-4px);
+  transition: 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255,0, 102,0);
+}
+
+.readMore::before {
+  border: linear-gradient(90deg, rgba(3, 156, 0, 1) 0%, rgba(170, 255, 0, 1) 100%);;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background:#a6ff00;
+  transition: width 0.3s ease;
+  border-radius: 1000px;
+  z-index: -1;
+  
+}
+
+.readMore:hover::before {
+  width: 100%;
+  color: black;
+  background:#a6ff00;
+  z-index: -1;
+}
+
+.readMore:hover {
+  color: black;
+  border-color: rgba(0, 0, 0, 0.851);
+  transition: 0.4s ease;
+}
+
+.features {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-content: center;
+  cursor: pointer;
+}
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background-color: #d7e4b526;
+  backdrop-filter: blur(10px);
+  font-size: 15px;
+  height: fit-content;
+  min-width: 250px;
+  border-radius: 15px;
+  padding: 20px;
+  gap: 15px;
+  flex: 1;
+  transition: 0.3s ease;
+  border: 1px solid #d7e4b526;
+}
+.feature:hover {
+  border: 1px solid #a6ff00;
+  box-shadow: rgba(156, 226, 5, 0.4) 0px 2px 4px, rgba(172, 249, 5, 0.3) 0px 7px 13px -3px, rgba(181, 249, 7, 0.2) 0px -3px 0px inset;
+}
+
+.feature i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #abff02cf;
+  border-radius: 50px;
+  font-size: 25px;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  transition: 0.5s ease;
+}
+.feature i:hover {
+  background: #039c00;
+  background: linear-gradient(90deg, rgba(3, 156, 0, 1) 0%, rgba(170, 255, 0, 1) 100%);
+  transform: rotate(360deg);
+}
+
+/* -------------------------------------------------------footer--------------------------------------------------------------------- */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-top: 200px;
+  border-top: 1px solid rgba(255, 255, 255, 0.092);
+}
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  min-height: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  border-color: #a6ff00;
+}
+.social-icon a{
+  background-color: #fafafa;
+  margin: 20px;
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+.social-icon a i {
+  color: black;
+  font-size: 20px;
+}
+.social-icon a:hover {
+  box-shadow: 0 0.6em 0.5em -0.4em #039c00, linear-gradient(90deg, rgba(3, 156, 0, 1) 0%, rgba(170, 255, 0, 1) 100%);;
+  transform: translateY(-0.25em);
+  background: #a6ff00;
+  transform: rotate(360deg);
+}
+.copyright {
+  font-size: 15px;
+}

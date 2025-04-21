@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio NK</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">NNKHIET</div>
+      <!-- thẻ <nav> như thẻ <div> nhưng có công dụng để trình duyệt web dễ định vị hơn -->
+      <nav>
+        <ul>
+          <li>
+            <a href="">Home</a>
+          </li>
+          <li>
+            <a href="">About</a>
+          </li>
+          <li>
+            <a href="">Project</a>
+          </li>
+          <li>
+            <a href="">Blog</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="contacts">
+        <!-- thẻ span được viết bên dưới có 3 tác dụng: tách biệt với phần tử icon, dễ styling, linh hoạt để phát triển code sau này  -->
+        <button class="button contact">
+          Contact Me
+          <!-- thẻ <i> bình thường sẽ dùng để in nghiên content bên trong, nhưng trường hợp này dùng để thêm icon -->
+          <i class="fa-solid fa-handshake"></i>
+        </button>
+      </div>
+    </header>
+    <main class="home">
+      <div class="home_content">
+        <div class="introduction">
+          <h1>Hi. <span>It's Khiet</span></h1>
+          <h2 class="content2">Full Stack <strong>Developer</strong></h2>
+        </div>
+        <h3 class="description">I'm a <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore earum ullam facere quaerat est dicta architecto tempora, eveniet non temporibus, at molestiae fuga voluptatem dignissimos laudantium voluptate rem tempore in.</p></h3>
+        <div class="button_wrapper"> 
+          <button class="button start"> <i class="fa-solid fa-rocket"></i>
+            Let's Start
+          </button>
+          <button class="button readMore"> <i class="fa-solid fa-book"></i>
+            Read more
+          </button>
+        </div>
+        <div class="features">
+          <div class="feature">
+            <i class="fas fa-palette feature-icon"></i>
+            <h3>Design Tools</h3>
+            <p>Learn popular design tools</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-code feature-icon"></i>
+            <h3>Coding</h3>
+            <p>Basic of HTML & CSS</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-users feature-icon"></i>
+            <h3>Community</h3>
+            <p>Join our design community</p>
+          </div>
+        </div>
+      </div>
+      <img class="Khiet" src="./img/NNK.png" alt="Personal_img">
+    </main>
+    <footer>
+      <div class="social-icon">
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+      <div class="copyright">
+        copyright &copy;2025; Design by Nguyen Ngoc Khiet
+      </div>
+    </footer>
+  </div>
+
+
+
+</body>
+</html>
