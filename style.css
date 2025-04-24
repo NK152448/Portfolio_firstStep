@@ -24,7 +24,7 @@ body {
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 10px auto;
   overflow-x: hidden; /* ẩn phần nội dung vượt quá chiều ngang container, ngăn thanh cuộn ngang xuất hiện */
 }
@@ -45,8 +45,8 @@ header {
 }
 
 .contact {
-  padding: 10px;
-  font-size: 10px;
+  padding: 15px 30px;
+  font-size: 15px;
   transition: 0.3s ease;
 }
 .contact:hover {
@@ -60,7 +60,7 @@ header {
   --primary-gradient: linear-gradient(128deg, #a6ff00 0%, #e9630a 50%, #ff3333 100%);
   --hover-gradient: linear-gradient(128deg, #8bc408 0%, #d15a08 50%, #ff6666 100%);
   --text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  --font-size-large: clamp(6rem, 14vw, 8rem); /* clamp(min, preferred, max) dùng để linh hoạt kích thước khi user sử dụng trang web qua máy tính, điện thoại hoặc ipad */
+  --font-size-large: clamp(4rem, 12vw, 6rem); /* clamp(min, preferred, max) dùng để linh hoạt kích thước khi user sử dụng trang web qua máy tính, điện thoại hoặc ipad */
 }
 
 /* @media (điều kiện) {kiểu dáng} */
@@ -104,24 +104,67 @@ header {
 }
 
 nav ul {
-  font-size: 20px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6e2d0824;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   list-style: none;
-  justify-content: space-around;
-  gap: 30px;
+  border-radius: 40px;
+  width: 400px;
+  height: 50px;
+  gap: 25px;
+  transition: 0.5s ease;
+}
+nav ul:hover {
+  border: 1px solid #a6ff00;
+  box-shadow: rgba(156, 226, 5, 0.4) 0px 2px 4px, rgba(172, 249, 5, 0.3) 0px 7px 13px -3px, rgba(181, 249, 7, 0.2) 0px -3px 0px inset;
 }
 
-ul a {
-  text-decoration: none;
+
+
+ul li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
+  border-radius: 50px 50px 30px 30px;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  transition:  0.3s ease;
+}
+ul li a:hover {
+  width: 120px;
+  background-color: #a6ff00;
+  color: black;
+}
+ul li a span {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.3s ease;
+  font-size: 15px;
+  font-weight: 700;
+}
+ul li a:hover span {
+  transform: translateY(0px);
+  opacity: 1;
+}
+ul li a i {
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+ul li a:hover i {
+  transform: translateY(-20px);
+  opacity: 0;
 }
 
 .button {
   background-color: white;
   border: none;
-  padding: 12px 25px; /* khoảng cách từ chữ đến viền nút, cụ thể từ chữ đến viền trên và dưới nút cách 12px, và 2 bên mỗi bên cách 25px */
   border-radius: 1000px; /* độ bo góc */
-  font-size: 20px;
   cursor: pointer;
   color: black;
   overflow: hidden;
@@ -144,16 +187,19 @@ main {
 }
 
 .Khiet {
-  margin-right: 35px;
+  margin-right: 70px;
   border-radius: 50px;
   background-color: #64e90511;
   box-shadow: 
     -10px -10px 30px rgb(75, 83, 63),
      10px  10px 30px rgba(174, 174, 192, 0.4);
-
   width: 655px;
   height: 800px;
   user-select: none;
+  transition: 0.3s ease
+}
+.Khiet:hover {
+  filter: drop-shadow(1px 1px 20px #eeff00);
 }
 
 .introduction {
@@ -166,6 +212,7 @@ main {
   flex-direction: column;
   gap: 30px;
   max-width: 600px;
+  margin-left: 70px;
 }
 
 .home_content h1 {
@@ -212,9 +259,14 @@ main {
   color:#a6ff00;
   z-index: 1;
   gap: 5px;
+  padding: 12px 25px;
+  font-size: 20px;
 }
 
-
+.start {
+  padding: 12px 25px;
+  font-size: 20px;
+}
 .start:hover {
   background: #039c00;
   background: linear-gradient(90deg, rgba(3, 156, 0, 1) 0%, rgba(170, 255, 0, 1) 100%);
@@ -248,8 +300,8 @@ main {
 
 .readMore:hover {
   color: black;
-  border-color: rgba(0, 0, 0, 0.851);
-  transition: 0.4s ease;
+  border-color: #262626;
+  transition: color 0.3s ease, border-color 0.15s ease;
 }
 
 .features {
@@ -292,7 +344,7 @@ main {
   padding: 5px;
   transition: 0.5s ease;
 }
-.feature i:hover {
+.feature:hover i {
   background: #039c00;
   background: linear-gradient(90deg, rgba(3, 156, 0, 1) 0%, rgba(170, 255, 0, 1) 100%);
   transform: rotate(360deg);
@@ -326,19 +378,33 @@ footer {
   margin: 20px;
   text-decoration: none;
   padding: 15px;
+  padding-block: 15px;
   border-radius: 50%;
-  transition: 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
 }
 .social-icon a i {
   color: black;
-  font-size: 20px;
+  font-size: 15px;
 }
-.social-icon a:hover {
-  box-shadow: 0 0.6em 0.5em -0.4em #039c00, linear-gradient(90deg, rgba(3, 156, 0, 1) 0%, rgba(170, 255, 0, 1) 100%);;
-  transform: translateY(-0.25em);
-  background: #a6ff00;
-  transform: rotate(360deg);
+.social-icon a:hover i {
+  color: white;
 }
+.social-icon .github:hover {
+  background: #238636;
+  border-radius: 28%;
+}
+.social-icon .instagram:hover {
+  background: linear-gradient(60deg, rgba(249, 206, 52, 1) 0%, rgba(238, 42, 123, 1) 50%, rgba(98, 40, 215, 1) 100%);
+  border-radius: 28%;
+}
+.social-icon .facebook:hover {
+  background:#0866fe;
+  border-radius: 28%;
+  }
+.social-icon .twitter:hover {
+  background:black;
+  border-radius: 28%;
+  }
 .copyright {
   font-size: 15px;
 }
