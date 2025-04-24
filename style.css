@@ -55,12 +55,12 @@ header {
   padding: 15px 30px;
   font-size: 15px;
   transition: 0.3s ease;
+  z-index: 1;
 }
 .contact:hover {
   box-shadow: 0 0.6em 0.5em -0.4em #a6ff00;
   transform: translateY(-0.25em);
   background: #a6ff00;
-  z-index: 100;
 }
 .bar {
   display: none;
@@ -182,7 +182,7 @@ ul li a:hover i {
   cursor: pointer;
   color: black;
   overflow: hidden;
-  z-index: 100;
+  z-index: 1;
 }
 
 
@@ -461,7 +461,7 @@ footer {
 @media only screen and (max-width: 560px) {
   .Khiet {
     width: 300px;
-    height: 23pc;
+    height: fit-content;
   }
   .description {
     display: none;
@@ -477,6 +477,13 @@ footer {
 @media only screen and (max-width: 360px) {
   .Khiet {
     width: 150px;
-    height: 10pc;
+    height: fit-content;
+  }
+}
+
+@media only screen and (max-width: 160px) {
+  .Khiet {
+    width: 100px;
+    height: fit-content;
   }
 }
