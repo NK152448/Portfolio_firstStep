@@ -455,6 +455,9 @@ footer {
   .container header .bar {
     display: block;
   }
+  .container header .bar:hover {
+    color: white;
+  }
 }
 
 @media only screen and (max-width: 560px) {
