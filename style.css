@@ -10,7 +10,6 @@
   outline: none;
   font-family: 'Poppins', sans-serif;
 }
-
 #particles-js {
   position: absolute;
   width: 100%;
@@ -477,13 +476,13 @@ footer {
 @media only screen and (max-width: 360px) {
   .Khiet {
     width: 150px;
-    height: fit-content;
+    height: auto;
   }
 }
 
-@media only screen and (max-width: 160px) {
+/* @media only screen and (max-width: 160px) {
   .Khiet {
     width: 100px;
     height: fit-content;
   }
-}
+} */
