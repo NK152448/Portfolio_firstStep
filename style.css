@@ -461,7 +461,7 @@ footer {
 @media only screen and (max-width: 560px) {
   .Khiet {
     width: 300px;
-    height: fit-content;
+    height: 23pc;
   }
   .description {
     display: none;
@@ -473,3 +473,4 @@ footer {
     margin: 15px 15px 0px 15px;
   }
 }
+
